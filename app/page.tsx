@@ -93,6 +93,7 @@ export default function Home() {
                   <div>
                     <CardComponent
                       dayNumber={day.dayNumber}
+                      dayDisplay={day.dayDisplay}
                       activities={day.activities}
                       onPopoverOpen={handlePopoverOpen}
                       onPopoverClose={handlePopoverClose}

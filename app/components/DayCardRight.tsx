@@ -6,6 +6,7 @@ import { Activity } from "@/app/data/itinerary";
 
 export interface DayCardRightProps {
   dayNumber: number;
+  dayDisplay: string;
   activities: Activity[];
   onPopoverOpen: (
     event: React.MouseEvent<HTMLElement>,
@@ -17,6 +18,7 @@ export interface DayCardRightProps {
 
 export default function DayCardRight({
   dayNumber,
+  dayDisplay,
   activities,
   onPopoverOpen,
   onPopoverClose,
@@ -65,7 +67,7 @@ export default function DayCardRight({
             flexShrink: 0,
           }}
         >
-          Day {dayNumber}
+          Day {dayNumber} - {dayDisplay}
         </Typography>
 
         <Box
@@ -107,4 +109,3 @@ export default function DayCardRight({
     </Box>
   );
 }
-
