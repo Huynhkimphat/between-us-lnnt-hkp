@@ -48,7 +48,7 @@ export default function Home() {
         }}
       >
         <Header
-          logoText="My App"
+          logoText="LNNT x HKP"
           logoFontFamily="var(--font-antic-didone)"
           onLogoClick={() => {
             console.log("Logo clicked");
