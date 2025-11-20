@@ -1,18 +1,18 @@
-'use client';
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import MenuIcon from '@mui/icons-material/Menu';
+"use client";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemText from "@mui/material/ListItemText";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import MenuIcon from "@mui/icons-material/Menu";
 
 /**
  * Navigation item interface
@@ -63,7 +63,7 @@ export interface HeaderProps {
    * Background color of the AppBar
    * @default "primary"
    */
-  appBarColor?: 'default' | 'inherit' | 'primary' | 'secondary' | 'transparent';
+  appBarColor?: "default" | "inherit" | "primary" | "secondary" | "transparent";
 
   /**
    * Elevation (shadow depth) of the AppBar
@@ -83,16 +83,16 @@ export interface HeaderProps {
  * Default navigation items (Day 1 through Day 6)
  */
 const DEFAULT_NAV_ITEMS: NavItem[] = [
-  { label: 'Day 1', id: 'day-1' },
-  { label: 'Day 2', id: 'day-2' },
-  { label: 'Day 3', id: 'day-3' },
-  { label: 'Day 4', id: 'day-4' },
-  { label: 'Day 5', id: 'day-5' },
-  { label: 'Day 6', id: 'day-6' },
+  { label: "Trip 1", id: "day-1" },
+  { label: "Trip 2", id: "day-2" },
+  { label: "Trip 3", id: "day-3" },
+  { label: "Trip 4", id: "day-4" },
+  { label: "Trip 5", id: "day-5" },
+  { label: "Trip 6", id: "day-6" },
 ];
 
 export default function Header({
-  logoText = 'My App',
+  logoText = "LNNT x HKP",
   navItems = DEFAULT_NAV_ITEMS,
   onNavItemClick,
   onLogoClick,
@@ -137,7 +137,10 @@ export default function Header({
    * Mobile drawer content
    */
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', background: '#ccccccfe' }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: "center", background: "#ccccccfe" }}
+    >
       <Typography
         variant="h6"
         sx={{
@@ -153,7 +156,7 @@ export default function Header({
         {navItems.map((item) => (
           <ListItem key={item.id || item.label} disablePadding>
             <ListItemButton
-              sx={{ textAlign: 'center', py: 1.5 }}
+              sx={{ textAlign: "center", py: 1.5 }}
               onClick={() => handleNavItemClick(item)}
             >
               <ListItemText
@@ -170,15 +173,15 @@ export default function Header({
   );
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: "flex" }}>
       <AppBar
         component="nav"
         elevation={elevation}
         position="static"
         sx={{
-            background: 'transparent',
-            borderRadius: 2,
-            color: 'black'
+          background: "transparent",
+          borderRadius: 2,
+          color: "black",
         }}
       >
         <Toolbar>
@@ -187,7 +190,7 @@ export default function Header({
             aria-label="open navigation drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: "none" } }}
           >
             <MenuIcon />
           </IconButton>
@@ -197,13 +200,15 @@ export default function Header({
             component="div"
             sx={{
               flexGrow: 1,
-              display: { xs: 'none', sm: 'block' },
+              display: { xs: "none", sm: "block" },
               fontWeight: 600,
-              color: '#4e0313',
-              cursor: onLogoClick ? 'pointer' : 'default',
-              '&:hover': onLogoClick ? {
-                opacity: 0.8,
-              } : {},
+              color: "#4e0313",
+              cursor: onLogoClick ? "pointer" : "default",
+              "&:hover": onLogoClick
+                ? {
+                    opacity: 0.8,
+                  }
+                : {},
               ...(logoFontFamily && { fontFamily: logoFontFamily }),
             }}
             onClick={handleLogoClick}
@@ -216,10 +221,10 @@ export default function Header({
             component="div"
             sx={{
               flexGrow: 1,
-              display: { xs: 'block', sm: 'none' },
+              display: { xs: "block", sm: "none" },
               fontWeight: 700,
-              color: 'black',
-              cursor: onLogoClick ? 'pointer' : 'default',
+              color: "black",
+              cursor: onLogoClick ? "pointer" : "default",
               ...(logoFontFamily && { fontFamily: logoFontFamily }),
             }}
             onClick={handleLogoClick}
@@ -227,18 +232,18 @@ export default function Header({
             {logoText}
           </Typography>
 
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Button
                 key={item.id || item.label}
                 sx={{
-                  color: 'black',
+                  color: "black",
                   mx: 0.5,
                   fontWeight: 500,
-                  '&:hover': {
-                    backgroundColor: '#6e0d25',
-                    border: '1px solid #4e0313',
-                    color: '#FAF4F0',
+                  "&:hover": {
+                    backgroundColor: "#6e0d25",
+                    border: "1px solid #4e0313",
+                    color: "#FAF4F0",
                   },
                 }}
                 onClick={() => handleNavItemClick(item)}
@@ -260,9 +265,9 @@ export default function Header({
             keepMounted: true, // Better open performance on mobile
           }}
           sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': {
-              boxSizing: 'border-box',
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
               width: drawerWidth,
             },
           }}

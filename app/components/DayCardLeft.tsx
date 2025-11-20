@@ -49,7 +49,7 @@ export default function DayCardLeft({
             borderLeftColor: "#8B1538",
           },
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: { xs: "column" },
           gap: { xs: 1, md: 2 },
           overflow: "hidden",
         }}
@@ -68,18 +68,6 @@ export default function DayCardLeft({
         >
           Day {dayNumber} - {dayDisplay}
         </Typography>
-
-        <Box
-          sx={{
-            display: { xs: "none", md: "block" },
-            width: { xs: "2px", md: "3px" },
-            height: { xs: "60px", md: "80px" },
-            background: "linear-gradient(180deg, #6E0D25 0%, transparent 100%)",
-            mr: { xs: 1, md: 2 },
-            alignSelf: "center",
-            transition: "all 0.3s ease",
-          }}
-        />
 
         <MenuList sx={{ p: 0, flex: 1 }}>
           {activities.map((activity, index) => (
