@@ -38,7 +38,7 @@ export default function DayCardLeft({
           borderLeft: { xs: "3px solid #6E0D25", md: "6px solid #6E0D25" },
           borderRadius: { xs: "0 8px 8px 0", md: "0 12px 12px 0" },
           padding: { xs: "12px 14px", sm: "16px 20px", md: "24px 32px" },
-          width: { xs: "100%", sm: "90%", md: "80%" },
+          width: { xs: "100%", sm: "90%" },
           boxShadow: "4px 4px 20px rgba(110, 13, 37, 0.15)",
           transition: "all 0.3s ease",
           "&:hover": {

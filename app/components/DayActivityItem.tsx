@@ -1,6 +1,13 @@
 "use client";
 
-import { ListItem, Typography, IconButton, Box, useMediaQuery, useTheme } from "@mui/material";
+import {
+  ListItem,
+  Typography,
+  IconButton,
+  Box,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export interface DayActivityItemProps {
@@ -36,7 +43,7 @@ export default function DayActivityItem({
         p: 1,
         display: "flex",
         flexDirection: { xs: "column", md: "row" },
-        alignItems: "center",
+        alignItems: "start",
         cursor: "pointer",
         borderRadius: "8px",
         transition: "all 0.3s ease",
@@ -55,14 +62,21 @@ export default function DayActivityItem({
           fontWeight: 700,
           fontSize: "1rem",
           color: "#6E0D25",
-          minWidth: { xs: "auto", md: "90px" },
+          minWidth: { xs: "auto", md: "105px" },
           mr: { xs: 0, md: 1.5 },
           flexShrink: 0,
         }}
       >
         {time}
       </Typography>
-      <Box sx={{ display: "flex", flex: 1, alignItems: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          flex: 1,
+          alignItems: "center",
+          justifyContent: "space-between",
+        }}
+      >
         <Typography
           component="span"
           sx={{
